@@ -15,7 +15,7 @@
         <div style="margin-top: 10px;">
             <a class="btn btn-success" href="<?php echo base_url('C_ruangan/index/') ?>">Data Ruangan</a>
             <a class="btn btn-success" href="<?php echo base_url('Peminjaman/index/') ?>">Data Peminjaman Ruangan</a>
-            <a class="btn btn-success" href="<?php echo base_url('C_ruangan/tambahData/') ?>">Data Penyewa</a>
+            <a class="btn btn-success" href="<?php echo base_url('Penyewa/index/') ?>">Data Penyewa</a>
             <a class="btn btn-success" href="<?php echo base_url('Peminjaman/tambahData/') ?>">Tambah Data Peminjaman</a>
             <a class="btn btn-danger" href="<?php echo base_url('Login/logout/') ?>">Logout</a>
             <br></br>
