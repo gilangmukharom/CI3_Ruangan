@@ -39,7 +39,7 @@ class Peminjaman extends CI_Controller {
                  "tgl_pengembalian"   => $tgl_pengembalian
                 ]; // Menyimpan hasil 
         $this->m_peminjaman->tambahData($data);
-        redirect();
+        redirect(base_url('Peminjaman'));
  
     }
  
@@ -66,12 +66,12 @@ class Peminjaman extends CI_Controller {
         // print_r($data);
         // exit();      
         $this->m_peminjaman->updateData($data,$id_peminjaman); 
-        redirect();         
+        redirect(base_url('Peminjaman'));        
     }
  
     public function deleteData($id_peminjaman){
         $this->m_peminjaman->deleteData($id_peminjaman); 
-        redirect();
+        redirect(base_url('Peminjaman'));
     }
  
 }

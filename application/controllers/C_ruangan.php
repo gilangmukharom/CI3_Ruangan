@@ -40,7 +40,7 @@ class C_ruangan extends CI_Controller
             "status_ruangan"   => $status_ruangan
         ]; // Menyimpan hasil 
         $this->M_ruangan->tambahData($data);
-        redirect();
+        redirect(base_url('C_Ruangan'));
     }
 
     public function editData($id_ruangan)
@@ -67,12 +67,12 @@ class C_ruangan extends CI_Controller
         // print_r($data);
         // exit();      
         $this->M_ruangan->updateData($data, $id_ruangan);
-        redirect();
+        redirect(base_url('C_Ruangan'));
     }
 
     public function deleteData($id_ruangan)
     {
         $this->M_ruangan->deleteData($id_ruangan);
-        redirect();
+        redirect(base_url('C_Ruangan'));
     }
 }
