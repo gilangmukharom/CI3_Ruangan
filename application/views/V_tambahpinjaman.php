@@ -13,7 +13,7 @@
                 <strong>Peminjaman Ruangan</strong>
             </div>
             <div class="card-body">
-                <form action="<?php echo base_url(). 'C_ruangan/tambah_aksi'; ?>" method="post">
+                <form action="<?php echo base_url(). 'Peminjaman/tambah_aksi'; ?>" method="post">
                 <div class="form-group">
                     <input required="required" class="form-control" type="hidden" id="id_peminjaman" name="id_peminjaman" />
                 </div>

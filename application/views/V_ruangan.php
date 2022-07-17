@@ -15,8 +15,11 @@
             <div class="card-header"><strong>Sistem Peminjaman Ruangan</strong></div>
         </div>
         <div style="margin-top: 10px;">
+        <a class="btn btn-success" href="<?php echo base_url('C_ruangan/index/') ?>">Data Ruangan</a>
+            <a class="btn btn-success" href="<?php echo base_url('Peminjaman/index/') ?>">Data Peminjaman Ruangan</a>
+            <a class="btn btn-success" href="<?php echo base_url('C_ruangan/tambahData/') ?>">Data Penyewa</a>
             <a class="btn btn-success" href="<?php echo base_url('C_ruangan/tambahData/') ?>">Tambah Data Ruangan</a>
-            <a class="btn btn-danger" href="<?php echo base_url('Login/logout/') ?>">logout</a>
+            <a class="btn btn-danger" href="<?php echo base_url('Login/logout/') ?>">Logout</a>
             <br></br>
             <div class="table-responsive">
                 <table class="table table-striped table-bordered" style="border: 1px solid black;">

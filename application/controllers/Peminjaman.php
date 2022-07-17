@@ -10,9 +10,9 @@ class Peminjaman extends CI_Controller {
  
     public function index()
     {
-        $dataRuangan = $this->m_peminjaman->ambilData(); 
+        $dataRu= $this->m_peminjaman->ambilData(); 
  
-        $data['peminjaman'] = $dataRuangan; // Mengoper variabel dataRuangan ke View V_ruangan
+        $data['sewa'] = $dataRu; // Mengoper variabel dataRuangan ke View V_ruangan
  
         $this->load->view('V_peminjaman', $data);
     }
@@ -24,49 +24,53 @@ class Peminjaman extends CI_Controller {
     public function tambah_aksi()
     {
         
-        $id_ruangan        = $this->input->post('id_ruangan');
-        $nama_ruangan      = $this->input->post('nama_ruangan'); // Menangkap hasil dari Input nama ruangan
-        $kapasitas         = $this->input->post('kapasitas'); 
-        $deskripsi         = $this->input->post('deskripsi');
-        $status_ruangan    = $this->input->post('status_ruangan'); 
+        $id_peminjaman        = $this->input->post('id_peminjaman');
+        $nama_peminjam      = $this->input->post('nama_peminjam'); // Menangkap hasil dari Input nama ruangan
+        $tgl_pengajuan         = $this->input->post('tgl_pengajuan'); 
+        $nama_ruangan         = $this->input->post('nama_ruangan');
+        $tgl_keperluan    = $this->input->post('tgl_keperluan'); 
+        $tgl_pengembalian    = $this->input->post('tgl_keperluan'); 
  
-        $data = ["id_ruangan"       => $id_ruangan,
-                 "nama_ruangan"     => $nama_ruangan,
-                 "kapasitas"        => $kapasitas,
-                 "deskripsi"        => $deskripsi,
-                 "status_ruangan"   => $status_ruangan
+        $data = ["id_peminjaman"       => $id_peminjaman,
+                 "nama_peminjam"     => $nama_peminjam,
+                 "tgl_pengajuan"        => $tgl_pengajuan,
+                 "nama_ruangan"        => $nama_ruangan,
+                 "tgl_keperluan"   => $tgl_keperluan,
+                 "tgl_pengembalian"   => $tgl_pengembalian
                 ]; // Menyimpan hasil 
-        $this->M_ruangan->tambahData($data);
+        $this->m_peminjaman->tambahData($data);
         redirect();
  
     }
  
-    public function editData($id_ruangan){
+    public function editData($id_peminjaman){
  
-        $data['ruangan_edit'] = $this->M_ruangan->ambilDataByNoinduk($id_ruangan); 
-        $this->load->view('V_editRuangan',$data);
+        $data['peminjaman_edit'] = $this->m_peminjaman->ambilDataByNoinduk($id_peminjaman); 
+        $this->load->view('V_editPeminjaman',$data);
     }
  
-    public function updateData($id_ruangan){
-        $nama_ruangan      = $this->input->post('nama_ruangan'); // Menangkap hasil dari Input nama ruangan
-        $kapasitas         = $this->input->post('kapasitas'); 
-        $deskripsi         = $this->input->post('deskripsi');
-        $status_ruangan    = $this->input->post('status_ruangan'); 
-        $data = ["id_ruangan"       => $id_ruangan,
-                 "nama_ruangan"     => $nama_ruangan,
-                 "kapasitas"        => $kapasitas,
-                 "deskripsi"        => $deskripsi,
-                 "status_ruangan"   => $status_ruangan
+    public function updateData($id_peminjaman){
+        $nama_peminjam      = $this->input->post('$nama_peminjam'); // Menangkap hasil dari Input nama ruangan
+        $tgl_pengajuan         = $this->input->post('$tgl_pengajuan'); 
+        $nama_ruangan         = $this->input->post('$nama_ruangan');
+        $tgl_keperluan    = $this->input->post('$tgl_keperluan');  
+        $tgl_pengembalian         = $this->input->post('$tgl_pengembalian');
+        $data = ["id_peminjaman"       => $id_peminjaman,
+                 "nama_peminjam"     => $nama_peminjam,
+                 "tgl_pengajuan"        => $tgl_pengajuan,
+                 "nama_ruangan"        => $nama_ruangan,
+                 "tgl_keperluan"   => $tgl_keperluan,
+                 "tgl_pengembalian"   => $tgl_pengembalian
                 ];
         // echo "<pre>";
         // print_r($data);
         // exit();      
-        $this->M_ruangan->updateData($data,$id_ruangan); 
+        $this->m_peminjaman->updateData($data,$id_peminjaman); 
         redirect();         
     }
  
-    public function deleteData($id_ruangan){
-        $this->M_ruangan->deleteData($id_ruangan); 
+    public function deleteData($id_peminjaman){
+        $this->m_peminjaman->deleteData($id_peminjaman); 
         redirect();
     }
  
